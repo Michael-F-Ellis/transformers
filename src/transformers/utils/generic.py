@@ -290,7 +290,8 @@ def to_numpy(obj):
     """
 
     framework_to_numpy = {
-        "pt": lambda obj: obj.detach().cpu().numpy(),
+        #"pt": lambda obj: obj.detach().cpu().numpy(),
+        "pt": lambda obj: obj.detach().cpu().float().numpy().astype(ml_dtypes.bfloat16),
         "tf": lambda obj: obj.numpy(),
         "jax": lambda obj: np.asarray(obj),
         "np": lambda obj: obj,
