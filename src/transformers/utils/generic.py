@@ -26,6 +26,7 @@ from functools import partial
 from typing import Any, ContextManager, Iterable, List, Tuple
 
 import numpy as np
+import ml_dtypes
 from packaging import version
 
 from .import_utils import (
